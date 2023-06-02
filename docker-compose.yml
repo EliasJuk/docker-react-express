@@ -1,5 +1,14 @@
 version: '3'
 services:
+  # FRONTEND
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
   # BACKEND
   backend:
     build:
@@ -9,3 +18,5 @@ services:
       - 3001:3001
     volumes:
       - ./backend:/app
+    depends_on:
+      - frontend
