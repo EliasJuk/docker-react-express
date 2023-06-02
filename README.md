@@ -7,10 +7,10 @@ Configuração basica para rodar um Front-end ReactJS e um Back-end Express
   $ tree
   📁 docker-react-express
   ├── 📁 backend
-  │   └── 🐳 dockerfile.backend
-  │   └── 📄 .gitignore  │
+  │   └── 🐳 dockerfile
+  │   └── 📄 .gitignore
   ├── 📁 frontend
-  │   └── 🐳 dockerfile.frontend
+  │   └── 🐳 dockerfile
   │   └── 📄 .gitignore
   ├── 🐳 docker-compose.yml
   ├── 🐳 .dockerignore
