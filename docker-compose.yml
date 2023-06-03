@@ -1,18 +1,12 @@
-version: '3'
+version: '3.8'
+
 services:
-  # FRONTEND
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: dockerfile
-    ports:
-      - 3000:3000
-    volumes:
-      - ./frontend:/app
   # BACKEND
   backend:
+    container_name: backend
+    image: backend:1.0.0
     build:
-      context: ./backend
+      context: backend
       dockerfile: dockerfile
     ports:
       - 3001:3001
@@ -20,3 +14,14 @@ services:
       - ./backend:/app
     depends_on:
       - frontend
+  # FRONTEND
+  frontend:
+    container_name: frontend
+    image: frontend:1.0.0
+    build:
+      context: frontend
+      dockerfile: dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
